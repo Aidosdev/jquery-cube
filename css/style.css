@@ -1,0 +1,117 @@
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+body {
+	background: black;
+}
+
+img {
+	width: 100%;
+}
+
+
+
+/*==============стили 3д куба=============*/
+
+.container {
+	position: relative;
+	margin: 200px auto;
+	width: 300px;
+	height: 300px;
+	perspective: 500px;
+}
+
+.cube {
+	width: inherit;
+	height: inherit;
+	transform-style: preserve-3d;
+	animation: linear 10s anim infinite;
+}
+
+.side {
+	position: absolute;
+	width: inherit;
+	height: inherit;
+	border: 5px solid #fff;
+	font: normal 70px Arial;
+	text-align: center;
+	line-height: 300px;
+	color: #fff;
+	/*backface-visibility: hidden;*/	
+}
+
+
+.front {
+	transform: translateZ(150px);
+}
+
+.back {
+	transform: rotateY(180deg) translateZ(150px);
+}
+
+.right {
+	transform: rotateY(90deg) translateZ(150px);
+}
+
+.left {
+	transform: rotateY(-90deg) translateZ(150px);
+}
+
+.top {
+	transform: rotateX(90deg) translateZ(150px);
+}
+
+.bottom {
+	transform: rotateX(-90deg) translateZ(150px);
+}
+
+
+@keyframes anim {
+	from, to {
+		transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+	}
+	16% {
+		transform: rotateY(-90deg);
+	}
+	33% {
+		transform: rotateY(-90deg) rotateZ(90deg);
+	}
+	50% {
+		transform: rotateY(-180deg) rotateZ(90deg);
+	}
+	66% {
+		transform: rotateY(-270deg) rotateX(90deg);
+	}
+	83% {
+		transform: rotateX(90deg);
+	}
+}
+
+
+
+
+/*=======================================================*/
+/*.asd {
+	transform: rotateY(-90deg);
+	transition: 2s;
+}
+
+.asd1 {
+	transform: rotateY(90deg);
+	transition: 2s;
+}
+
+.asd2 {
+	transform: rotateX(-90deg);
+	transition: 2s;
+}
+
+.asd3 {
+	transform: rotateX(-90deg);
+	transition: 2s;
+}*/
